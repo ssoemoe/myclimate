@@ -6,8 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import java.util.ArrayList;
-
 /**
  * Created by shane on 4/7/2018.
  */
@@ -55,6 +53,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper{
         }
         return false;
     }
+
 
     /*Testing/Demoing*/
     public String getCurrentWeather() {
