@@ -47,8 +47,5 @@ public class WeatherEvaluator {
 			face = faces.HORROR_FACE;
 
 		return face;
-
-
-
 	}
 }
