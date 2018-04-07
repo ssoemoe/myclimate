@@ -16,14 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
 
         <activity android:name=".view.SettingsActivity"></activity>
-=======
-        <activity
-            android:name=".view.PreferencesMenu"
-            android:label="@string/title_activity_preferences_menu"></activity>
->>>>>>> 375020313b83b3f135113713a64174045f8a3218
     </application>
 
 </manifest>
