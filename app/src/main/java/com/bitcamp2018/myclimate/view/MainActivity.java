@@ -1,6 +1,7 @@
 package com.bitcamp2018.myclimate.view;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
@@ -12,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.VideoView;
 
@@ -23,12 +25,19 @@ import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
     private DatabaseAdapter adapter;
+    VideoView vv;
+
+    int displayHeight = 500;
+    int displayWidth = 500;
+    int smallHeight = 300;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
         Toolbar menuToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(menuToolbar);
@@ -37,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.loadWeatherData();
 
         // start the VideoView of the clouds
-        VideoView vv = (VideoView) findViewById(R.id.cloudslove);
+        vv = findViewById(R.id.cloudslove);
         vv.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.cloudslove));
         vv.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -61,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
                 // User chose the "Settings" item, show the app settings UI
                 return true;
 
+
             default:
                 // If we got here, the user's action was not recognized.
                 // Invoke the superclass to handle it.
@@ -68,5 +78,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+    }
 
 }

@@ -27,6 +27,6 @@
     <VideoView
         android:id="@+id/cloudslove"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" />
+        android:layout_height="1000px"/>
 
 </android.support.constraint.ConstraintLayout>
