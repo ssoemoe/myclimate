@@ -9,6 +9,7 @@ import android.provider.MediaStore;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.view.menu.ActionMenuItem;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -30,6 +31,13 @@ public class MainActivity extends AppCompatActivity {
     int displayHeight = 500;
     int displayWidth = 500;
     int smallHeight = 300;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.appmenu, menu);
+        return true;
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 
