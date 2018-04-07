@@ -107,6 +107,8 @@ public class DatabaseAdapter extends SQLiteOpenHelper{
                 colValues.put(WeatherTable.CONDITION, condition);
 
                 add(colValues, WeatherTable.TABLE_NAME);
+                fah++;
+                cel++;
             }
 
             //for condition index
