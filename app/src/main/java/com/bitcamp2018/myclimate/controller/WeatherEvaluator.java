@@ -1,24 +1,18 @@
-import java.util.Math;
-
-public enum EmojiFace {
-	SAD_FACE,
-	MEH_FACE,
-	HAPPY_FACE
-}
+package com.bitcamp2018.myclimate.controller;
 
 public class WeatherEvaluator {
 
-	public static EmojiFace evaluateWeatherFromObs(int prefTemp, int curTemp, int partValue) {
+	public static String evaluateWeatherFromObs(int prefTemp, int curTemp, int partValue) {
 		int pointDeduction = Math.abs(prefTemp - curTemp) / partValue;
 		int finalScore = 10 - pointDeduction;
 		if(finalScore >= 7) {
-			return HAPPY_FACE;
+			return "happy";
 		}
 		else if(finalScore >= 4 && finalScore < 7) {
-			return MEH_FACE;
+			return "ok";
 		}
 		else {
-			return SAD_FACE;
+			return "sad";
 		}
 	}
 

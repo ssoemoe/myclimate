@@ -65,9 +65,9 @@ public class DatabaseAdapter extends SQLiteOpenHelper{
         Cursor cursor      = db.rawQuery(selectQuery, null);
 
         if (cursor.moveToFirst()) {
-            do {
-                result += cursor.getString(cursor.getColumnIndex(WeatherTable.DAYS)) + cursor.getDouble(cursor.getColumnIndex(WeatherTable.FAH));
-            } while (cursor.moveToNext());
+
+            result += cursor.getString(cursor.getColumnIndex(WeatherTable.DAYS)) + cursor.getDouble(cursor.getColumnIndex(WeatherTable.FAH));
+
         }
         cursor.close();
         db.close();
