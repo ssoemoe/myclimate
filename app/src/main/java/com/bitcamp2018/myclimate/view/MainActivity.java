@@ -52,8 +52,6 @@ public class MainActivity extends AppCompatActivity {
         testView.setText(adapter.getCurrentWeather());
     }
 
-
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
