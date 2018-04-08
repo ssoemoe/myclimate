@@ -6,8 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import java.util.ArrayList;
-
 /**
  * Created by shane on 4/7/2018.
  */
@@ -56,6 +54,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper{
         return false;
     }
 
+
     /*Testing/Demoing*/
     public String getCurrentWeather() {
         String result = "";
@@ -65,9 +64,9 @@ public class DatabaseAdapter extends SQLiteOpenHelper{
         Cursor cursor      = db.rawQuery(selectQuery, null);
 
         if (cursor.moveToFirst()) {
-            do {
-                result += cursor.getString(cursor.getColumnIndex(WeatherTable.DAYS)) + cursor.getDouble(cursor.getColumnIndex(WeatherTable.FAH));
-            } while (cursor.moveToNext());
+
+            result += cursor.getString(cursor.getColumnIndex(WeatherTable.DAYS)) + cursor.getDouble(cursor.getColumnIndex(WeatherTable.FAH));
+
         }
         cursor.close();
         db.close();
@@ -107,6 +106,8 @@ public class DatabaseAdapter extends SQLiteOpenHelper{
                 colValues.put(WeatherTable.CONDITION, condition);
 
                 add(colValues, WeatherTable.TABLE_NAME);
+                fah++;
+                cel++;
             }
 
             //for condition index
