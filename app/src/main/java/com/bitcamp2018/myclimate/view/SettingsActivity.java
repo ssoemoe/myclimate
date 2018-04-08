@@ -34,4 +34,6 @@ public class SettingsActivity extends AppCompatActivity {
         spinner.setAdapter(arrayAdapter);
     }
 
+
+
 }
