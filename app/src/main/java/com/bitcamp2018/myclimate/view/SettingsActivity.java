@@ -17,7 +17,7 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-    //setting the weather conidtions
+    //setting the weather conditions
         Spinner spinner = findViewById(R.id.weatherSpinner);
 
         ArrayList<String> conditions = new ArrayList<>();
@@ -31,4 +31,5 @@ public class SettingsActivity extends AppCompatActivity {
         spinner.setAdapter(arrayAdapter);
         spinner.setAdapter(arrayAdapter);
     }
+
 }
