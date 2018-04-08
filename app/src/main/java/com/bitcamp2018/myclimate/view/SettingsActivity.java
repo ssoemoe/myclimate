@@ -1,6 +1,9 @@
 package com.bitcamp2018.myclimate.view;
 
+import android.app.NotificationManager;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -83,6 +86,15 @@ public class SettingsActivity extends AppCompatActivity {
                 savePref();
             }
         });
+
+        // Test notifications button
+        Button testNotify = findViewById(R.id.testNotificationsBtn);
+        testNotify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                testNotification();
+            }
+        });
     }
 
 
@@ -112,5 +124,21 @@ public class SettingsActivity extends AppCompatActivity {
         else
             Settings.isCel = true;
     }
+
+    public void testNotification() {
+        int nID = 290;
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+        String nIDStr = "MCTestNotify";
+        String textTitle = "MC Test Notification";
+        String textContent = "This is a test of the Android Notification API...";
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this, nIDStr)
+                .setSmallIcon(R.drawable.ic_notifications_black_24dp)
+                .setContentTitle(textTitle)
+                .setContentText(textContent)
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+        notificationManager.notify(nID, mBuilder.build());
+    }
+
 
 }
