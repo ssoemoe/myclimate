@@ -187,7 +187,7 @@ public class WeatherEvaluator {
 
 
 	}
-	
+	//
 
 	// returns the face
 	// currTemp depends whether you're using Farhenheit or not. Use is_f() to determine what you're using
