@@ -5,6 +5,7 @@ package com.bitcamp2018.myclimate.controller;
 public class WeatherEvaluator {
 
 	// package private enums for the faces
+	// Hi this is a comment
 	public enum faces{
 		SAD_FACE, HAPPY_FACE, MEH_FACE;
 	}
@@ -185,6 +186,11 @@ public class WeatherEvaluator {
 		return score;
 
 
+	}
+
+	public void dummyMethod(){
+		int dummy = 5;
+		int method = 3;
 	}
 
 	// returns the face
