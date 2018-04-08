@@ -151,14 +151,10 @@ public class SettingsActivity extends AppCompatActivity {
                 .setSmallIcon(R.drawable.ic_notifications_black_24dp)
                 .setContentTitle(textTitle)
                 .setContentText(textContent)
-<<<<<<< HEAD
                 .setVibrate(new long[]{1000, 1000, 1000, 1000, 1000})
                 .setVisibility(Visibility.MODE_OUT)
-                .setPriority(Notification.PRIORITY_MAX);
-=======
+                .setPriority(Notification.PRIORITY_MAX)
                 .setPriority(NotificationCompat.PRIORITY_MAX);
-
->>>>>>> 08e01f58bd46a68a4e98baaa1742546b09b732e5
 
         notificationManager.notify(nID, mBuilder.build());
     }
