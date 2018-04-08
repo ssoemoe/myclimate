@@ -1,6 +1,6 @@
 // David Ahmed
 
-package myClimate;
+package com.bitcamp2018.myclimate.controller;
 
 public class WeatherEvaluator {
 
@@ -37,6 +37,8 @@ public class WeatherEvaluator {
 	private boolean is_f = true;
 
 	private WeatherEvaluator() {
+		lowRange = 0;
+		highRange = 0;
 	}
 
 	// since it's a singleton class this makes sure there is only one inst0ance of the class
@@ -107,7 +109,7 @@ public class WeatherEvaluator {
 
 
 	//allows the user to change ranges from cold to warm or hot
-	public void changeRange(range range) {
+	private void changeRange(range range) {
 		if(range == range.COLD) {
 			lowRange = -999;
 			highRange = 30;
@@ -205,9 +207,6 @@ public class WeatherEvaluator {
 
 
 		return face;
-
-
-
 	}
 
 

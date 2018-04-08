@@ -54,6 +54,8 @@ public class DatabaseAdapter extends SQLiteOpenHelper{
         return false;
     }
 
+    //delete
+
 
     /*Testing/Demoing*/
     public String getCurrentWeather() {

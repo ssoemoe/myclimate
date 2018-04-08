@@ -1,6 +1,5 @@
 package com.bitcamp2018.myclimate.view;
 
-import android.content.ClipData;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.media.MediaPlayer;
@@ -16,8 +15,6 @@ import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.VideoView;
-
-
 import com.bitcamp2018.myclimate.R;
 import com.bitcamp2018.myclimate.model.DatabaseAdapter;
 
