@@ -50,13 +50,6 @@
 
         </LinearLayout>
 
-        <Spinner
-            android:id="@+id/weatherSpinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:spinnerMode="dialog"
-            android:layout_margin="20dp"/>
-
         <TextView
             android:id="@+id/conditionsTxtView"
             android:layout_width="match_parent"
@@ -70,7 +63,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             xmlns:android="http://schemas.android.com/apk/res/android">
-        <RadioButton
+
+            <RadioButton
             android:id="@+id/coldBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -98,9 +92,23 @@
                 android:layout_marginLeft="20dp"
                 android:text="Hot" />
 
+            <Spinner
+                android:id="@+id/weatherSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:layout_weight="1"
+                android:spinnerMode="dialog" />
+
+            <Spinner
+                android:id="@+id/degreeSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
             <Button
                 android:id="@+id/saveButton"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:layout_weight="1"
