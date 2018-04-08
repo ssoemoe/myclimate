@@ -56,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
         vv.start();
 
         //current weather
-        TextView testView = findViewById(R.id.testView);
-        testView.setText(adapter.getCurrentWeather());
+        TextView weatherView = findViewById(R.id.curWeatherTxt);
+        weatherView.setText(adapter.getCurrentWeather());
     }
 
     @Override

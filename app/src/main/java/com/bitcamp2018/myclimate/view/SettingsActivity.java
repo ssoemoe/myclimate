@@ -17,6 +17,7 @@ import com.bitcamp2018.myclimate.model.Settings;
 import com.bitcamp2018.myclimate.model.WeatherTable;
 
 import java.util.ArrayList;
+import java.util.Set;
 
 /**
  * Created by shane on 4/7/2018.
@@ -51,7 +52,7 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
         //setting the weather conditions
-        Spinner spinner = findViewById(R.id.weatherSpinner);
+        Spinner weatherSpinner = findViewById(R.id.weatherSpinner);
 
         ArrayList<String> conditions = new ArrayList<>();
         conditions.add("Sunny");
@@ -61,8 +62,18 @@ public class SettingsActivity extends AppCompatActivity {
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, conditions);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(arrayAdapter);
-        spinner.setAdapter(arrayAdapter);
+        weatherSpinner.setAdapter(arrayAdapter);
+
+        //setting the weather conditions
+        Spinner degreeSpinner = findViewById(R.id.degreeSpinner);
+
+        ArrayList<String> degrees = new ArrayList<>();
+        degrees.add("C (Celsius)");
+        degrees.add("F (Fahrenheit)");
+
+        arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, degrees);
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        degreeSpinner.setAdapter(arrayAdapter);
 
         //click save preferences
         Button save = findViewById(R.id.saveButton);
@@ -81,6 +92,7 @@ public class SettingsActivity extends AppCompatActivity {
         RadioButton radioButton = findViewById(temps.getCheckedRadioButtonId());
         EditText hour = findViewById(R.id.hours);
         Spinner conditionSpin = findViewById(R.id.weatherSpinner);
+        Spinner degreeSpin = findViewById(R.id.degreeSpinner);
 
         //Determine temp_range
         Settings.temp_range = radioButton.getText().toString();
@@ -89,8 +101,16 @@ public class SettingsActivity extends AppCompatActivity {
         System.out.println(Settings.condition);
         Settings.allowNoti = notiCheck.isChecked();
         System.out.println(Settings.allowNoti + "");
-        Settings.hours = Double.parseDouble(hour.getText().toString());
+
+        if(!hour.getText().toString().equals(""))
+            Settings.hours = Double.parseDouble(hour.getText().toString());
         System.out.println(Settings.hours + "");
+
+        if(degreeSpin.getSelectedItem().toString().equalsIgnoreCase("f (fahrenheit)")) {
+            Settings.isCel = false;
+        }
+        else
+            Settings.isCel = true;
     }
 
 }
