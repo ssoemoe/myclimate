@@ -2,12 +2,8 @@ package com.bitcamp2018.myclimate.view;
 
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -15,15 +11,15 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.WindowManager;
-import android.widget.TextView;
-import android.widget.VideoView;
+import android.webkit.WebView;
+
 import com.bitcamp2018.myclimate.R;
 import com.bitcamp2018.myclimate.model.DatabaseAdapter;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
     private DatabaseAdapter adapter;
-    VideoView vv;
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -46,21 +42,13 @@ public class MainActivity extends AppCompatActivity {
         adapter = new DatabaseAdapter(this);
         adapter.loadWeatherData();
 
-        // start the VideoView of the clouds
-        vv = findViewById(R.id.cloudslove);
-        vv.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.cloudslove));
-        vv.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-            @Override
-            public void onPrepared(MediaPlayer mediaPlayer) {
-                mediaPlayer.setVideoScalingMode(MediaPlayer.VIDEO_SCALING_MODE_SCALE_TO_FIT_WITH_CROPPING);
-                mediaPlayer.setLooping(true);
-            }
-        });
-        vv.start();
+        WebView webview = findViewById(R.id.webview);
+        webview.getSettings().setJavaScriptEnabled(true);
 
-        //current weather
-        TextView weatherView = findViewById(R.id.curWeatherTxt);
-        weatherView.setText(adapter.getCurrentWeather());
+        double lat = 38.994373;
+        double lng = -77.029778;
+        webview.loadUrl("https://openweathermap.org/weathermap?basemap=map&cities=true&layer=temperature&lat=38.9943&lon=-77.0298&zoom=50#");
+
     }
 
     @Override

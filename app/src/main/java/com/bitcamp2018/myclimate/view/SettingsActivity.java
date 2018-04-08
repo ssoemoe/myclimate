@@ -83,6 +83,21 @@ public class SettingsActivity extends AppCompatActivity {
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         degreeSpinner.setAdapter(arrayAdapter);
 
+        //setting the weather conditions
+        Spinner minutesSpinner = findViewById(R.id.minutesSpinner);
+
+        ArrayList<String> minutes = new ArrayList<>();
+        for(int i = 1; i < 61; i++) {
+            if(i == 1)
+                minutes.add(i + " minute");
+            else
+                minutes.add(i + " minutes");
+        }
+
+        arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, minutes);
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        minutesSpinner.setAdapter(arrayAdapter);
+
         //click save preferences
         Button save = findViewById(R.id.saveButton);
         save.setOnClickListener(new View.OnClickListener() {
@@ -107,9 +122,11 @@ public class SettingsActivity extends AppCompatActivity {
         CheckBox notiCheck = findViewById(R.id.notiCheck);
         RadioGroup temps = findViewById(R.id.radioTemps);
         RadioButton radioButton = findViewById(temps.getCheckedRadioButtonId());
-        EditText hour = findViewById(R.id.hours);
         Spinner conditionSpin = findViewById(R.id.weatherSpinner);
-        Spinner degreeSpin = findViewById(R.id.degreeSpinner);
+        Spinner minutesSpin = findViewById(R.id.minutesSpinner);
+
+        String[] strs = minutesSpin.getSelectedItem().toString().split(" ");
+        Settings.hours = Integer.parseInt(strs[0]);
 
         //Determine temp_range
         Settings.temp_range = radioButton.getText().toString();
@@ -118,35 +135,16 @@ public class SettingsActivity extends AppCompatActivity {
         System.out.println(Settings.condition);
         Settings.allowNoti = notiCheck.isChecked();
         System.out.println(Settings.allowNoti + "");
-
-        if(!hour.getText().toString().equals("")) {
-            double h = Double.parseDouble(hour.getText().toString());
-            if(h < 1)
-                Toast.makeText(this, "Hour must be greater than zero", Toast.LENGTH_LONG).show();
-            else if(h > 24)
-                Toast.makeText(this, "Hour cannot be greater than 24", Toast.LENGTH_LONG).show();
-            else
-                Settings.hours = h;
-
-        }
-        else {
-            Toast.makeText(this, "Hours must be greater than zero" , Toast.LENGTH_LONG).show();
-        }
         System.out.println(Settings.hours + "");
-
-        if(degreeSpin.getSelectedItem().toString().equalsIgnoreCase("f (fahrenheit)")) {
-            Settings.isCel = false;
-        }
-        else
-            Settings.isCel = true;
     }
 
     public void testNotification() {
         int nID = 290;
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
         String nIDStr = "MCTestNotify";
-        String textTitle = "MC Test Notification";
-        String textContent = "This is a test of the Android Notification API...";
+        String textTitle = "Favorite Weather Notification";
+        String textContent = "It'll be " + Settings.condition +" in " + Settings.hours + " minutes!\n" +
+                new String(Character.toChars(0x1f601));
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this, nIDStr)
                 .setSmallIcon(R.drawable.ic_notifications_black_24dp)
                 .setContentTitle(textTitle)
