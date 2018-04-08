@@ -20,8 +20,6 @@ import android.widget.VideoView;
 import com.bitcamp2018.myclimate.R;
 import com.bitcamp2018.myclimate.model.DatabaseAdapter;
 
-import org.w3c.dom.Text;
-
 public class MainActivity extends AppCompatActivity {
     private DatabaseAdapter adapter;
     VideoView vv;
@@ -84,6 +82,11 @@ public class MainActivity extends AppCompatActivity {
         super.onConfigurationChanged(newConfig);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
+    }
+
+    //Preference button
+    public void onPrefBtnClick() {
+        setIntent();
     }
 
 }
