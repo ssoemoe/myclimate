@@ -5,6 +5,7 @@ package com.bitcamp2018.myclimate.controller;
 public class WeatherEvaluator {
 
 	// package private enums for the faces
+	// Hi this is a comment
 	public enum faces{
 		SAD_FACE, HAPPY_FACE, MEH_FACE;
 	}
@@ -186,6 +187,7 @@ public class WeatherEvaluator {
 
 
 	}
+	
 
 	// returns the face
 	// currTemp depends whether you're using Farhenheit or not. Use is_f() to determine what you're using

@@ -150,6 +150,7 @@ public class SettingsActivity extends AppCompatActivity {
                 .setContentText(textContent)
                 .setPriority(NotificationCompat.PRIORITY_MAX);
 
+
         notificationManager.notify(nID, mBuilder.build());
     }
 
