@@ -1,10 +1,13 @@
 package com.bitcamp2018.myclimate.view;
 
+import android.app.Notification;
 import android.app.NotificationManager;
 import android.os.Bundle;
+import android.renderscript.RenderScript;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.transition.Visibility;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -148,7 +151,9 @@ public class SettingsActivity extends AppCompatActivity {
                 .setSmallIcon(R.drawable.ic_notifications_black_24dp)
                 .setContentTitle(textTitle)
                 .setContentText(textContent)
-                .setPriority(NotificationCompat.PRIORITY_HIGH);
+                .setVibrate(new long[]{1000, 1000, 1000, 1000, 1000})
+                .setVisibility(Visibility.MODE_OUT)
+                .setPriority(Notification.PRIORITY_MAX);
 
         notificationManager.notify(nID, mBuilder.build());
     }
