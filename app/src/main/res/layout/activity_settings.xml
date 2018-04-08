@@ -20,9 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:text="Allow notifications from MyClimate"
-            tools:layout_editor_absoluteX="20dp"
-            tools:layout_editor_absoluteY="222dp" />
+            android:text="Allow notifications from MyClimate" />
 
         <LinearLayout
             android:id="@+id/notiLinear"
@@ -56,8 +54,8 @@
             android:id="@+id/weatherSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:spinnerMode="dialog" />
+            android:spinnerMode="dialog"
+            android:layout_margin="20dp"/>
 
         <TextView
             android:id="@+id/conditionsTxtView"
@@ -70,14 +68,14 @@
         <RadioGroup
             android:id="@+id/radioTemps"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RadioButton
-                android:id="@+id/coldBtn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:text="Cold" />
+            android:layout_height="wrap_content"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+        <RadioButton
+            android:id="@+id/coldBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Cold" />
 
             <RadioButton
                 android:id="@+id/coolBtn"
@@ -100,23 +98,15 @@
                 android:layout_marginLeft="20dp"
                 android:text="Hot" />
 
+            <Button
+                android:id="@+id/saveButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:layout_weight="1"
+                android:text="Save Preferences" />
+
         </RadioGroup>
-
-        <Spinner
-            android:id="@+id/degreeSpinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <Button
-            android:id="@+id/saveButton"
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:layout_margin="20dp"
-            android:layout_weight="1"
-            android:text="Save Preferences"
-            tools:layout_editor_absoluteX="20dp"
-            tools:layout_editor_absoluteY="148dp" />
 
     </LinearLayout>
 

@@ -24,9 +24,6 @@ public class WeatherEvaluator {
 		FARHENHEIT, CELCIUS;
 	}
 
-
-
-
 	final private precipitation[] precipArr = {precipitation.SNOWY, precipitation.RAINY, precipitation.CLOUDY, precipitation.SUNNY};
 
 
@@ -41,7 +38,7 @@ public class WeatherEvaluator {
 		highRange = 0;
 	}
 
-	// since it's a singleton class this makes sure there is only one inst0ance of the class
+	// since it's a singleton class this makes sure there is only one instance of the class
 	public static WeatherEvaluator getInstance() {
 		if(weather == null)
 			weather = new WeatherEvaluator();

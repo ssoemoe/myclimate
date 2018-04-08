@@ -6,6 +6,8 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -21,6 +23,7 @@ import com.bitcamp2018.myclimate.model.DatabaseAdapter;
 public class MainActivity extends AppCompatActivity {
     private DatabaseAdapter adapter;
     VideoView vv;
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -88,4 +91,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(MainActivity.this, SettingsActivity.class));
     }
 
+
+
+    public void sendFaceNotification() {
+
+
+    }
 }
