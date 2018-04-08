@@ -148,7 +148,7 @@ public class SettingsActivity extends AppCompatActivity {
                 .setSmallIcon(R.drawable.ic_notifications_black_24dp)
                 .setContentTitle(textTitle)
                 .setContentText(textContent)
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+                .setPriority(NotificationCompat.PRIORITY_HIGH);
 
         notificationManager.notify(nID, mBuilder.build());
     }
