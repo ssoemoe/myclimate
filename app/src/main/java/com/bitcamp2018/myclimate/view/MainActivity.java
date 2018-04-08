@@ -1,5 +1,6 @@
 package com.bitcamp2018.myclimate.view;
 
+import android.content.ClipData;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.media.MediaPlayer;
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_settings:
                 // User chose the "Settings" item, show the app settings UI
-                setContentView(R.layout.activity_settings);
+                onPrefBtnClick();
                 break;
 
             default:
@@ -87,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Preference button
     public void onPrefBtnClick() {
-        setIntent();
+        startActivity(new Intent(MainActivity.this, SettingsActivity.class));
     }
 
 }

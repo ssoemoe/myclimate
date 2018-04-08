@@ -17,8 +17,9 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_settings);
 
-    //setting the weather conditions
+        //setting the weather conditions
         Spinner spinner = findViewById(R.id.weatherSpinner);
 
         ArrayList<String> conditions = new ArrayList<>();
