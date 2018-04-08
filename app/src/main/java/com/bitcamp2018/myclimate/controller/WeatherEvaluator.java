@@ -203,9 +203,6 @@ public class WeatherEvaluator {
 			face = faces.MEH_FACE;
 		else
 			face = faces.SAD_FACE;
-
-
-
 		return face;
 	}
 
