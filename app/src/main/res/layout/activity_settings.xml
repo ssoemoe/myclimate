@@ -10,7 +10,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="633dp"
+        tools:layout_editor_absoluteY="184dp">
 
         <CheckBox
             android:id="@+id/notiCheck"
@@ -26,7 +28,7 @@
 
             <TextView
                 android:id="@+id/hourTxtView"
-                android:layout_width="5dp"
+                android:layout_width="241dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Get notification from every"
@@ -34,7 +36,7 @@
 
             <EditText
                 android:id="@+id/hours"
-                android:layout_width="0dp"
+                android:layout_width="132dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
@@ -49,6 +51,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:spinnerMode="dialog" />
+
 
     </LinearLayout>
 
