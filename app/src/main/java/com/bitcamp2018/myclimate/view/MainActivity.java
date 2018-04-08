@@ -5,11 +5,9 @@ import android.content.res.Configuration;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
-import android.provider.MediaStore;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.view.menu.ActionMenuItem;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -28,10 +26,6 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseAdapter adapter;
     VideoView vv;
 
-    int displayHeight = 500;
-    int displayWidth = 500;
-    int smallHeight = 300;
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -47,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
-        Toolbar menuToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        Toolbar menuToolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(menuToolbar);
 
         adapter = new DatabaseAdapter(this);
@@ -65,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         });
         vv.start();
 
+        //current weather
         TextView testView = findViewById(R.id.testView);
         testView.setText(adapter.getCurrentWeather());
     }

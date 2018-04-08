@@ -8,36 +8,40 @@
 
 
     <LinearLayout
+        android:id="@+id/verticalLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="10dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="633dp"
-        tools:layout_editor_absoluteY="184dp">
+        app:layout_constraintLeft_toLeftOf="parent">
 
         <CheckBox
             android:id="@+id/notiCheck"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="20dp"
             android:text="Allow notifications from MyClimate" />
 
         <LinearLayout
             android:id="@+id/notiLinear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="20dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/hourTxtView"
-                android:layout_width="241dp"
+                android:layout_width="7dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Get notification from every"
+                android:text="Get notification every"
                 android:textAppearance="@style/TextAppearance.AppCompat" />
 
             <EditText
                 android:id="@+id/hours"
-                android:layout_width="132dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="number"
@@ -50,8 +54,50 @@
             android:id="@+id/weatherSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:spinnerMode="dialog" />
+            android:spinnerMode="dialog"
+            android:layout_margin="20dp"/>
 
+        <TextView
+            android:id="@+id/conditionsTxtView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Favorite Weather Conditions"
+            android:textAppearance="@style/TextAppearance.AppCompat" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+        <RadioButton
+            android:id="@+id/coldBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Cold" />
+
+            <RadioButton
+                android:id="@+id/coolBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="Cool" />
+
+            <RadioButton
+                android:id="@+id/warmBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="Warm" />
+
+            <RadioButton
+                android:id="@+id/hotBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="Hot" />
+
+        </RadioGroup>
 
     </LinearLayout>
 
