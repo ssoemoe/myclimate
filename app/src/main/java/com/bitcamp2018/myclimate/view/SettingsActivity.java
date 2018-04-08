@@ -14,6 +14,8 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Toast;
+
 import com.bitcamp2018.myclimate.R;
 import com.bitcamp2018.myclimate.controller.WeatherEvaluator;
 import com.bitcamp2018.myclimate.model.Settings;
@@ -114,8 +116,19 @@ public class SettingsActivity extends AppCompatActivity {
         Settings.allowNoti = notiCheck.isChecked();
         System.out.println(Settings.allowNoti + "");
 
-        if(!hour.getText().toString().equals(""))
-            Settings.hours = Double.parseDouble(hour.getText().toString());
+        if(!hour.getText().toString().equals("")) {
+            double h = Double.parseDouble(hour.getText().toString());
+            if(h < 1)
+                Toast.makeText(this, "Hour must be greater than zero", Toast.LENGTH_LONG).show();
+            else if(h > 24)
+                Toast.makeText(this, "Hour cannot be greater than 24", Toast.LENGTH_LONG).show();
+            else
+                Settings.hours = h;
+
+        }
+        else {
+            Toast.makeText(this, "Hours must be greater than zero" , Toast.LENGTH_LONG).show();
+        }
         System.out.println(Settings.hours + "");
 
         if(degreeSpin.getSelectedItem().toString().equalsIgnoreCase("f (fahrenheit)")) {
