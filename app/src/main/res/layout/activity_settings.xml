@@ -63,11 +63,12 @@
             xmlns:android="http://schemas.android.com/apk/res/android">
 
             <RadioButton
-            android:id="@+id/coldBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="Cold" />
+                android:id="@+id/coldBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:checked="true"
+                android:text="Cold" />
 
             <RadioButton
                 android:id="@+id/coolBtn"
